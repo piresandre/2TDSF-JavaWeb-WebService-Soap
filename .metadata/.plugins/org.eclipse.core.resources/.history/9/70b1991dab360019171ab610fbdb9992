@@ -1,0 +1,43 @@
+package br.com.fiap.loja.terminalConsulta;
+
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Scanner;
+
+import org.apache.log4j.Logger;
+
+import br.com.fiap.loja.bo.EstoqueBO.EstoqueBO;
+import br.com.fiap.loja.estoque.bean.EstoqueLoja;
+import br.com.fiap.loja.singleton.PropertySingleton;
+
+public class Loja {
+
+	private static Logger log = Logger.getLogger(EstoqueBO.class);
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		int codProduto;
+		 String nomeLoja= PropertySingleton.getInstance().getProperty("nome");
+		 
+		 Calendar data = Calendar.getInstance();
+		 SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+		 String formatted = format1.format(data.getTime());
+		 Scanner entrada = new Scanner(System.in);
+		 System.out.println("Bem Vindo a "+ nomeLoja);
+		 
+		 
+		 System.out.println("Digite o codigo do produto");
+		 codProduto = entrada.nextInt();
+		 
+		 EstoqueLoja estoque = EstoqueBO.ConsultarProduto(codProduto);
+		 
+		 log.debug("Log de debug");
+
+		 System.out.println("codigo do produto pedido na data de "+formatted );
+		
+	}
+
+}

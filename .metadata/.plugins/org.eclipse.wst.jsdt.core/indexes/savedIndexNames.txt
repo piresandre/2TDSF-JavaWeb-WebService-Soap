@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+D:\2TDSF-WEB-SERVICE-SOAP\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1191718594.index
+4251875385.index
+833188455.index
+2613639890.index
+2900805220.index
